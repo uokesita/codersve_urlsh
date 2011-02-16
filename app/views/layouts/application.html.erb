@@ -7,6 +7,12 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
+<% if flash[:shortened_id].present? %>  
+  <p class='shortened-link'>  
+  The shortened url is available <%= link_to 'here',  url_url(flash[:shortened_id]) %>.  
+  (Right click and copy link to share it).  
+  </p>  
+<% end %>
 
 <%= yield %>
 
